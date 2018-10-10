@@ -74,7 +74,7 @@ body, html {
 
 .game__mole {
   background-image: url(../public/assets/moleA.gif);
-  background-size: 50px;
+  background-size: 60px;
   background-repeat: no-repeat;
   background-position: top;
   height: 100%;
@@ -152,7 +152,7 @@ body, html {
   }
 
   .game__mole {
-    background-size: 130px;
+    background-size: 180px;
   }
 }
 
@@ -175,7 +175,7 @@ body, html {
   }
 
   .game__mole {
-    background-size: 130px;
+    background-size: 170px;
   }
 
   .game__hole {
