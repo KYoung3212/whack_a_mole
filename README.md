@@ -1,7 +1,7 @@
 # Whack-A-Mole Game
-You can whack a mole [here](https://whack-a-mole-react.herokuapp.com/).
+You can whack a mole [here](https://kevin-young.us/whack_a_mole).
 
-<img src="https://github.com/RhodesPeter/whack-a-mole-react/blob/master/public/assets/illustration-for-readme.png" width="320">
+<img src="https://github.com/RhodesPeter/whack-a-mole-react/blob/master/public/assets/illustration-for-readme.gif" width="320">
 
 Built in React.<br>
 Animation with [Anime.js](http://anime-js.com/).<br>
