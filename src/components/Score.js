@@ -5,7 +5,7 @@ class Score extends Component {
   render(){
     return (
       <div className="game__score" style={{ display: this.props.context.display }}>
-        <h1>SCORE: {this.props.context.score}</h1>
+        <h1>SCORE: {this.props.context.score} /15</h1>
       </div>
     )
   };

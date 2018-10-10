@@ -1,5 +1,6 @@
 body, html {
-  background-color: #2D4B96;
+  background: url(../public/assets/grass1.jpg);
+  background-size: cover;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -23,6 +24,7 @@ body, html {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+
 }
 
 .game__title {
@@ -46,6 +48,8 @@ body, html {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  cursor: url(../public/assets/hammer.png), auto;
+
 }
 
 .game__hole {
@@ -69,14 +73,14 @@ body, html {
 }
 
 .game__mole {
-  background-image: url(../public/assets/mole.png);
-  background-size: 50px;
+  background-image: url(../public/assets/moleA.gif);
+  background-size: 100px;
   background-repeat: no-repeat;
   background-position: top;
   height: 100%;
   transform: translate(0, 50%);
-  transition: all 0.4s;
-  cursor: pointer;
+  transition: all 0.6s;
+  cursor: url(../public/assets/hammer.png), auto;
 }
 
 .game__whack {
@@ -148,7 +152,7 @@ body, html {
   }
 
   .game__mole {
-    background-size: 60px;
+    background-size: 130px;
   }
 }
 
@@ -171,7 +175,7 @@ body, html {
   }
 
   .game__mole {
-    background-size: 65px;
+    background-size: 130px;
   }
 
   .game__hole {
