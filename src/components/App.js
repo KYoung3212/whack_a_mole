@@ -5,6 +5,7 @@ import Score from './Score.js';
 import GameOver from './GameOver.js';
 import StartButton from './StartButton.js';
 import MoleHole from './MoleHole.js';
+import WhackAttack from '../../public/assets/whackattack.png'
 
 class App extends Component {
 
@@ -30,7 +31,9 @@ class App extends Component {
       buttonMessage: 'Start Game',
       gameOver: 'none',
       buttonDisplay: 'inline-block',
-      titleMargin: '15px'
+      titleMargin: '15px',
+      cursor: '../public/assets/hammer.png'
+
     };
   }
 
@@ -124,6 +127,7 @@ class App extends Component {
     let target = e.target;
     target.parentNode.classList.add('game__cross');
     target.classList.add('no-background');
+   this.addCursor();
     this.lockOutClick();
     this.setState({
       background: '75px',
@@ -132,6 +136,7 @@ class App extends Component {
     });
     window.setTimeout(function(){
       target.parentNode.classList.remove('game__cross');
+      this.removeCursor();
       target.classList.remove('no-background');
     }, 500)
   }
@@ -154,24 +159,40 @@ class App extends Component {
     shake();
   }
 
+  addCursor(){
+    document.querySelector('.board').classList.add('newCursor');
+    document.querySelector('.game__mole').classList.add('newCursor');
+
+  }
+
+  removeCursor(){
+    document.querySelector('.board').classList.remove('newCursor');
+    document.querySelector('.game__mole').classList.remove('newCursor')
+
+
+  }
+
+
   createMoleHoles(){
     var holes = [];
     for(let i = 1; i <= 9; i++){
       holes.push(<MoleHole key={ i } context={ this.state }
-        onClick={ this.addToScore.bind(this) } holeNumber={ i }/>);
+        onClick={ this.addToScore.bind(this) }  holeNumber={ i }/>);
     }
     return (
-      <div className="board">
+      <div onMouseDown={this.addCursor.bind(this)} onMouseUp={this.removeCursor.bind(this)} className="board">
         { holes }
       </div>
     );
   }
 
   render() {
+
+
     return (
       <div className="main-container">
         <div className="game" style={{WebkitTransform: this.state['shake']}}>
-          <h1 className="game__title" style={{ margin: this.state.titleMargin }}>WHACK-A-MOLE</h1>
+          <h1 className="game__title" style={{ margin: this.state.titleMargin }}><img src={WhackAttack}/></h1>
           <GameOver context={ this }/>
           <div ref={ 'gameOver' } className="game__button-container">
             <StartButton context={ this.state } onClick={ this.timeOut.bind(this) }/>

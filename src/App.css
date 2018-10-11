@@ -30,7 +30,8 @@ body, html {
 .game__title {
   -webkit-transform: translateZ(0px);
   font-size: 2.1rem;
-  width: 100%;
+  height: auto;
+  
 }
 
 .game__score {
@@ -49,6 +50,11 @@ body, html {
   justify-content: center;
   flex-wrap: wrap;
   cursor: url(../public/assets/hammer.png), auto;
+
+}
+
+.newCursor{
+  cursor: url(../public/assets/hammerCopy.png), auto;
 
 }
 
@@ -106,7 +112,7 @@ body, html {
   padding: 0.6rem 0.6rem 0.7rem 0.6rem;
   color: white;
   border: 2px solid #FCB942;
-  background: none;
+  background: darkred;
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Amaranth', sans-serif;
@@ -114,7 +120,8 @@ body, html {
 }
 
 .game__start-button:hover {
-  border: 2px solid #FFD008;
+  border: 6px solid #FFD008;
+  cursor: url(../public/assets/hammer.png), auto;
 }
 
 .game__start-button:focus {
@@ -132,6 +139,7 @@ body, html {
 .game__game-over {
   background-image: url(../public/assets/wavy-border.svg);
   background-repeat: no-repeat;
+  /* background: red; */
   background-position: center;
   width: 280px;
   height: 190px;
