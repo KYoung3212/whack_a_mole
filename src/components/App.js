@@ -32,9 +32,12 @@ class App extends Component {
       gameOver: 'none',
       buttonDisplay: 'inline-block',
       titleMargin: '15px',
-      cursor: '../public/assets/hammer.png'
-
+      cursor: '../public/assets/hammer.png',
+      newCursor: false
     };
+    this.addToScore = this.addToScore.bind(this);
+    this.hit = this.hit.bind(this);
+    this.ready = this.ready.bind(this);
   }
 
   animate(el){
@@ -111,7 +114,7 @@ class App extends Component {
     }
     this.clearMoles();
     this.setState({
-      [activeMole]: 'translate(0, 15%)',
+      [activeMole]: 'translate(0, 5%)',
       lastMole: [activeMole]
     });
   }
@@ -123,11 +126,11 @@ class App extends Component {
   }
 
   addToScore(e){
+    // this.addCursor();
     if (this.state.moleHasBeenWhacked){ return; }
     let target = e.target;
     target.parentNode.classList.add('game__cross');
     target.classList.add('no-background');
-   this.addCursor();
     this.lockOutClick();
     this.setState({
       background: '75px',
@@ -136,7 +139,6 @@ class App extends Component {
     });
     window.setTimeout(function(){
       target.parentNode.classList.remove('game__cross');
-      this.removeCursor();
       target.classList.remove('no-background');
     }, 500)
   }
@@ -159,17 +161,19 @@ class App extends Component {
     shake();
   }
 
-  addCursor(){
-    document.querySelector('.board').classList.add('newCursor');
-    document.querySelector('.game__mole').classList.add('newCursor');
-
-  }
-
-  removeCursor(){
-    document.querySelector('.board').classList.remove('newCursor');
-    document.querySelector('.game__mole').classList.remove('newCursor')
+  hit(){
+    // console.log("clicked");
+    // document.querySelector('.board').classList.add('newCursor');
+    // document.querySelector('.game__mole').classList.add('newCursor');
+    this.setState({ newCursor: true })
+    }
 
 
+  ready(){
+    // document.querySelector('.board').classList.remove('newCursor');
+    // document.querySelector('.game__mole').classList.remove('newCursor')
+    // debugger;
+    this.setState({ newCursor: false })
   }
 
 
@@ -177,10 +181,10 @@ class App extends Component {
     var holes = [];
     for(let i = 1; i <= 9; i++){
       holes.push(<MoleHole key={ i } context={ this.state }
-        onClick={ this.addToScore.bind(this) }  holeNumber={ i }/>);
+        click={ this.addToScore }  holeNumber={ i }/>);
     }
     return (
-      <div onMouseDown={this.addCursor.bind(this)} onMouseUp={this.removeCursor.bind(this)} className="board">
+      <div onMouseDown={this.hit} onMouseUp={this.ready} className={`board ${this.state.newCursor ? "hit" : ""}`}>
         { holes }
       </div>
     );

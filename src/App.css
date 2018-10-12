@@ -53,9 +53,8 @@ body, html {
 
 }
 
-.newCursor{
+.hit {
   cursor: url(../public/assets/hammerCopy.png), auto;
-
 }
 
 .game__hole {
@@ -85,8 +84,7 @@ body, html {
   background-position: top;
   height: 100%;
   transform: translate(0, 50%);
-  transition: all 0.6s;
-  cursor: url(../public/assets/hammer.png), auto;
+  transition: all 0.5s;
 }
 
 .game__whack {
@@ -191,3 +189,5 @@ body, html {
     height: 120px;
   }
 }
+
+
