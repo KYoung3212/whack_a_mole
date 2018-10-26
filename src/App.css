@@ -109,7 +109,8 @@ body, html {
   font-size: 1rem;
   padding: 0.6rem 0.6rem 0.7rem 0.6rem;
   color: white;
-  border: 2px solid #FCB942;
+  /* outline: 6px solid #FCB942 transparent; */
+  border: 6px solid #FFD008 ;
   background: darkred;
   border-radius: 5px;
   cursor: pointer;
@@ -118,8 +119,10 @@ body, html {
 }
 
 .game__start-button:hover {
-  border: 6px solid #FFD008;
+  /* outline: 2px solid #FCB942 transparent;
+  border: 6px solid #FFD008; */
   cursor: url(../public/assets/hammer.png), auto;
+
 }
 
 .game__start-button:focus {
