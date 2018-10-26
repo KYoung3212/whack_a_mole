@@ -24,14 +24,13 @@ body, html {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-
 }
+
 
 .game__title {
   -webkit-transform: translateZ(0px);
   font-size: 2.1rem;
   height: auto;
-  
 }
 
 .game__score {
@@ -122,7 +121,6 @@ body, html {
   /* outline: 2px solid #FCB942 transparent;
   border: 6px solid #FFD008; */
   cursor: url(../public/assets/hammer.png), auto;
-
 }
 
 .game__start-button:focus {
