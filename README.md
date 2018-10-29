@@ -7,7 +7,7 @@ Illustration designed in Adobe Illustrator.<br>
 Created with the [create-react-app](https://www.npmjs.com/package/create-react-app) npm module. <br>
 Hosted on Heroku.<br>
 
-You can test it on my [live demo].(https://kevin-young.us/whack_a_mole).
+You can test it on my [live demo].
 
 <img src="https://github.com/KYoung3212/whack_a_mole_react/blob/master/public/assets/illustration-for-readme.gif" width="320">
 
